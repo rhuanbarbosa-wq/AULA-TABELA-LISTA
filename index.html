@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DevBurger</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <div>
+        <h1>🍔 DevBurger</h1>
+        <p>O hambúrguer favorito dos programadores!</p>
+        <p>Aberto todos os dias das 18h às 23h.</p>
+      </div>
+
+      <a href="#cardapio">Ver cardápio</a>
+    </header>
+
+    <main>
+      <!--
+        LISTA NÃO ORDENADA
+
+        <ul> significa unordered list, ou lista não ordenada.
+
+        Utilizamos esse tipo de lista quando a ordem dos itens
+        não é importante.
+
+        Cada item da lista é criado com a tag <li>.
+      -->
+      <section>
+        <h2>Nossos diferenciais</h2>
+
+        <ul>
+          <li>Hambúrguer artesanal</li>
+          <li>Pão feito diariamente</li>
+          <li>Ingredientes selecionados</li>
+          <li>Entrega rápida</li>
+          <li>Opções vegetarianas</li>
+        </ul>
+      </section>
+
+      <!--
+        LISTA ENCADEADA
+
+        Podemos colocar uma lista dentro de outra lista.
+
+        Neste exemplo, temos uma lista principal com as categorias
+        Carnes, Queijos e Molhos.
+
+        Dentro de cada categoria existe uma segunda <ul> com as opções.
+
+        IMPORTANTE:
+        A lista interna deve ficar dentro do <li> ao qual ela pertence.
+      -->
+      <section>
+        <h2>Monte seu lanche</h2>
+
+        <ul>
+          <li>
+            Carnes
+            <ul>
+              <li>Carne bovina</li>
+              <li>Frango</li>
+              <li>Vegetariano</li>
+            </ul>
+          </li>
+
+          <li>
+            Queijos
+            <ul>
+              <li>Cheddar</li>
+              <li>Muçarela</li>
+              <li>Prato</li>
+            </ul>
+          </li>
+
+          <li>
+            Molhos
+            <ul>
+              <li>Barbecue</li>
+              <li>Maionese verde</li>
+              <li>Molho especial</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <!--
+        LISTA ORDENADA
+
+        <ol> significa ordered list, ou lista ordenada.
+
+        Utilizamos quando a ordem dos itens é importante.
+
+        Cada item continua sendo criado com <li>, mas o navegador
+        adiciona a numeração automaticamente.
+      -->
+      <section>
+        <h2>Como fazer seu pedido?</h2>
+
+        <ol>
+          <li>Escolha seu hambúrguer.</li>
+          <li>Escolha os adicionais.</li>
+          <li>Escolha sua bebida.</li>
+          <li>Informe o endereço.</li>
+          <li>Finalize o pagamento.</li>
+        </ol>
+      </section>
+
+      <!--
+        LISTA DE DEFINIÇÃO
+
+        <dl> cria uma lista de definição.
+        <dt> representa o termo que queremos apresentar.
+        <dd> representa a descrição ou explicação desse termo.
+
+        Esse tipo de lista é útil para glossários, conceitos,
+        perguntas e respostas e termos técnicos.
+      -->
+      <section>
+        <h2>Entenda nosso cardápio</h2>
+
+        <dl>
+          <dt>Smash</dt>
+          <dd>Hambúrguer prensado diretamente na chapa.</dd>
+
+          <dt>Blend</dt>
+          <dd>Mistura de diferentes cortes de carne utilizada para preparar o hambúrguer.</dd>
+
+          <dt>Combo</dt>
+          <dd>Conjunto formado por lanche, acompanhamento e bebida.</dd>
+        </dl>
+      </section>
+
+      <!--
+        TABELA
+
+        Utilizamos tabelas quando temos informações relacionadas
+        que precisam ser organizadas em linhas e colunas.
+
+        Neste exemplo, nossa tabela possui três colunas:
+
+        Categoria | Produto | Preço
+
+        Também adicionamos id="cardapio" na <section>.
+        Por isso, o link href="#cardapio" criado no início da página
+        consegue trazer o usuário diretamente até esta parte.
+      -->
+      <section id="cardapio">
+        <h2>Cardápio</h2>
+
+        <!--
+          ESTRUTURA DA TABELA
+
+          <table> inicia a tabela.
+
+          <caption> cria um título ou legenda específico para a tabela.
+
+          <thead> agrupa o cabeçalho da tabela.
+          <tr> significa table row e cria uma linha.
+          <th> cria uma célula de cabeçalho.
+
+          Portanto, o primeiro <tr> abaixo cria uma linha contendo
+          os nomes das três colunas.
+        -->
+        <table>
+          <caption>
+            Cardápio DevBurger
+          </caption>
+
+          <thead>
+            <tr>
+              <th>Categoria</th>
+              <th>Produto</th>
+              <th>Preço</th>
+            </tr>
+          </thead>
+
+          <!--
+            CORPO DA TABELA
+
+            <tbody> agrupa os dados principais da tabela.
+
+            Dentro dele, cada <tr> cria uma nova linha
+            e cada <td> cria uma célula comum com dados.
+          -->
+          <tbody>
+            <!--
+              ROWSPAN
+
+              rowspan faz uma célula ocupar mais de uma linha.
+
+              Aqui, rowspan="3" faz a célula "Hambúrgueres"
+              ocupar o espaço de três linhas.
+
+              Assim, não precisamos repetir a categoria
+              para Dev Bacon, Java Burger e Python Smash.
+            -->
+            <tr>
+              <td rowspan="3">Hambúrgueres</td>
+              <td>Dev Bacon</td>
+              <td>R$ 28,00</td>
+            </tr>
+
+            <!--
+              SEGUNDA LINHA DE HAMBÚRGUERES
+
+              Não colocamos novamente a categoria nesta linha,
+              pois a célula "Hambúrgueres" da linha anterior
+              já está ocupando este espaço por causa do rowspan.
+            -->
+            <tr>
+              <td>Java Burger</td>
+              <td>R$ 30,00</td>
+            </tr>
+
+            <!--
+              TERCEIRA LINHA DE HAMBÚRGUERES
+
+              Esta linha também pertence à categoria "Hambúrgueres",
+              que continua ocupando a primeira coluna.
+            -->
+            <tr>
+              <td>Python Smash</td>
+              <td>R$ 26,00</td>
+            </tr>
+
+            <!--
+              OUTRO EXEMPLO DE ROWSPAN
+
+              Agora usamos rowspan="2".
+
+              Isso faz a célula "Bebidas" ocupar duas linhas:
+              uma para Refrigerante e outra para Suco natural.
+            -->
+            <tr>
+              <td rowspan="2">Bebidas</td>
+              <td>Refrigerante</td>
+              <td>R$ 7,00</td>
+            </tr>
+
+            <tr>
+              <td>Suco natural</td>
+              <td>R$ 9,00</td>
+            </tr>
+
+            <!--
+              COLSPAN
+
+              colspan faz uma célula ocupar mais de uma coluna.
+
+              Nossa tabela possui três colunas:
+
+              Categoria | Produto | Preço
+
+              Por isso, colspan="3" faz a célula abaixo
+              ocupar toda a largura das três colunas.
+            -->
+            <tr>
+              <td colspan="3">🍟 Todos os combos acompanham batata frita!</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <!--
+      RODAPÉ
+
+      <footer> representa o rodapé da página.
+      Normalmente usamos essa área para informações finais,
+      autoria, contato ou direitos autorais.
+    -->
+    <footer>
+      <p>DevBurger - Feito com código e muito bacon 🍔</p>
+    </footer>
+  </body>
+</html>
